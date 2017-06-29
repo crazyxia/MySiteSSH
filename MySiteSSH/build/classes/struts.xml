@@ -25,6 +25,20 @@
 	<!-- 过滤ws请求 -->
 	<constant name="struts.action.excludePattern" value="/websocket"></constant>
 
+	<!-- package:将Action配置封装，就是可以在package中配置很多action,并不对应java中的包 name属性：给包起个名字，起标识作用，随便起，不能与其他包名重复 
+		namespace属性：给action的访问路径中定义一个命名空间 extends属性：继承一个指定包（必选的），因为配置很重要 
+		abstract属性：包是否为抽象的，标示性属性，标识该包不能独立运行，专门被继承（给编程人员看的） -->
+		
+	<!-- action元素：配置action类
+				name：决定了Action访问资源名
+				class属性：action的完整类名
+				method属性：指定调用Action中的哪个方法来处理请求
+				-->
+				
+	<!--result元素：结果配置
+			name属性：标识结果处理的名称，与action方法的返回值对应
+			type属性：指定哪一个result类来指定处理结果，默认使用转发dispatcher
+	  -->
 	<!-- 约定*_*为所有的jsp跳转，并不执行任何逻辑 -->
 	<package name="jsp" namespace="/" extends="struts-default">
 		<action name="*_*" class="jsp">
@@ -32,10 +46,12 @@
 		</action>
 	</package>
 
+
+
 	<!-- 用户处理的action -->
 	<package name="user" namespace="/user" extends="struts-default">
 		<!-- 生成验证码 -->
-		<action name="createImage" class="user" method="createImage">
+		<action name="createImageAction" class="user" method="createImage">
 			<result name="success" type="stream">
 				<param name="contentType">image/jpeg</param>
 				<param name="inputName">inputStream</param>
@@ -48,40 +64,29 @@
 			</result>
 		</action>
 		<!-- 判断邮箱是否存在 -->
-		<action name="existEmail" class="user" method="existEmail">
-			<result name="success" type="stream">
-				<param name="contentType">text/html</param>
-			</result>
-		</action>
+		<!-- u<action name="existEmail" class="user" method="existEmail"> <result 
+			name="success" type="stream"> <param name="contentType">text/html</param> 
+			</result> </action> -->
 		<!-- 注册用户 -->
 		<action name="register" class="user" method="register">
 			<result name="success" type="redirect">../user_login</result>
 			<result name="error" type="redirect">../user_reg</result>
 		</action>
 		<!-- 判断邮箱是否激活、是否封号 -->
-		<action name="isactive" class="user" method="isactive">
-			<result name="success" type="stream">
-				<param name="contentType">text/html</param>
-			</result>
-		</action>
+		<!-- <action name="isactive" class="user" method="isactive"> <result name="success" 
+			type="stream"> <param name="contentType">text/html</param> </result> </action> -->
 		<!-- 激活邮箱账户 -->
-		<action name="activate" class="user" method="activate">
-			<result name="success" type="redirect">../user_login</result>
-			<result name="error" type="redirect">../user_activate?email=${email}&amp;status=0
-			</result>
-		</action>
+		<!-- <action name="activate" class="user" method="activate"> <result name="success" 
+			type="redirect">../user_login</result> <result name="error" type="redirect">../user_activate?email=${email}&amp;status=0 
+			</result> </action> -->
 		<!-- 重发邮件激活邮箱账户 -->
-		<action name="reactivate" class="user" method="reactivate">
-			<result name="success" type="redirect">../user_login</result>
-			<result name="error" type="redirect">../user_activate?email=${email}&amp;status=0
-			</result>
-		</action>
+		<!-- <action name="reactivate" class="user" method="reactivate"> <result 
+			name="success" type="redirect">../user_login</result> <result name="error" 
+			type="redirect">../user_activate?email=${email}&amp;status=0 </result> </action> -->
 		<!-- 邮箱账户登录成功处理操作 -->
-		<action name="login" class="user" method="login">
-			<result name="userPath" type="redirect">../${path}</result>
-			<result name="success" type="redirect">../public_index</result>
-			<result name="error" type="redirect">../user_login</result>
-		</action>
+		<!-- <action name="login" class="user" method="login"> <result name="userPath" 
+			type="redirect">../${path}</result> <result name="success" type="redirect">../public_index</result> 
+			<result name="error" type="redirect">../user_login</result> </action> -->
 		<!-- 判断session（user）是否存在 -->
 		<action name="isUserSession" class="user" method="isUserSession">
 			<result name="success" type="stream">
@@ -231,7 +236,8 @@
 			</result>
 		</action>
 		<!-- 根据资源id获取用户二维码信息 -->
-		<action name="getUserPayByResources_id" class="user" method="getUserPayByResources_id">
+		<action name="getUserPayByResources_id" class="user"
+			method="getUserPayByResources_id">
 			<result name="success" type="stream">
 				<param name="contentType">text/html</param>
 			</result>

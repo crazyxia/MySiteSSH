@@ -6,7 +6,7 @@
 
 <body>
 
-	<%@ include file="../public/header.jsp"%>
+<%@ include file="../public/header.jsp"%>
 
 	<div class="main layui-clear">
 
@@ -79,13 +79,13 @@
 		}).use('login');
 	</script>
 	<script type="text/javascript" src="res/modules/other/ztree/js/jquery-1.4.4.min.js"></script>
-	<script type="text/javascript" src="res/modules/other/mail/autoMail.1.0.min.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript" src="res/modules/other/mail/autoMail.1.0.min.js"></script> -->
+	<!-- <script type="text/javascript">
 	$(document).ready(function(){
 		$('#L_email').autoMail({
 			emails:['qq.com','163.com','126.com','sina.com','sohu.com','yahoo.cn','gmail.com','hotmail.com','live.cn']
 		});
 	});
-	</script>
+	</script> -->
 </body>
 </html>
