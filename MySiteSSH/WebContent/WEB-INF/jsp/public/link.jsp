@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.admintwo.model.User"%>
+<%@ page import="cn.crazyjava.model.User"%>
 <head>
 <meta charset="utf-8">
 <title>代码分享网-源码库、知识库、视频库、项目库，致力于为程序员提供最有帮助的代码</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="keywords" content="代码库，代码分享网">
+<meta name="keywords" content="疯狂java">
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
 <meta name="description"
 	content="代码库-代码分享网，致力于为程序员提供最有帮助的代码">

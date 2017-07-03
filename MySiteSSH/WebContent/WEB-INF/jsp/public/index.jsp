@@ -122,16 +122,16 @@
       <h3 class="fly-panel-title">友情链接</h3>
       <dl>
       	<dd>
-          <a href="https://www.admintwo.com/resource_detail?id=65" target="_blank">代码库1.0</a>
+          <a href="#" target="_blank">代码库1.0</a>
         </dd>
         <dd>
-          <a href="https://www.admintwo.com/resource_detail?id=115" target="_blank">代码库3.0</a>
+          <a href="#" target="_blank">代码库3.0</a>
         </dd>
         <dd>
-          <a href="http://www.layui.com/" target="_blank">layui</a>
+          <a href="#" target="_blank">layui</a>
         </dd>
         <dd>
-          <a href="http://www.dmaku.com/" target="_blank">网站模板</a>
+          <a href="#" target="_blank">网站模板</a>
         </dd>
       </dl>
     </div>
