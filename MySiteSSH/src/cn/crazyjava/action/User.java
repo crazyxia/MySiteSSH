@@ -40,6 +40,8 @@ import com.admintwo.util.ToolsUtils;*/
 import com.opensymphony.xwork2.ActionSupport;
 
 import cn.crazyjava.util.ToolsUtils;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @Title: User
@@ -150,7 +152,7 @@ public class User extends ActionSupport {
 		drawRands(g, rands);
 		System.out.println("====当前验证码：" + rands);
 
-		// 结束图像 的绘制 过程， 完成图像
+		// 结束图像的绘制过程，完成图像
 		g.dispose();
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		ImageIO.write(image, "jpeg", outputStream);
@@ -391,13 +393,14 @@ public class User extends ActionSupport {
 		System.out.println("====user/home返回值：" + userLabels);
 		returnJson(userLabels);
 	}
-
+//@Getter@Sette
+	/*使用lombok精简get，set方法*/
 	private String name;
 	private int sex;
 	private String city;
 	private String motto;
 
-	public String getName() {
+	/*public String getName() {
 		return name;
 	}
 
@@ -427,7 +430,7 @@ public class User extends ActionSupport {
 
 	public void setMotto(String motto) {
 		this.motto = motto;
-	}
+	}*/
 
 	/**
 	 * 该方法根据邮箱，修改主页信息
