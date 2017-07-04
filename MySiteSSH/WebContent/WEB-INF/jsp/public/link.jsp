@@ -3,13 +3,13 @@
 <%@ page import="cn.crazyjava.model.User"%>
 <head>
 <meta charset="utf-8">
-<title>代码分享网-源码库、知识库、视频库、项目库，致力于为程序员提供最有帮助的代码</title>
+<title>疯狂java-为程序员提供最有帮助的文档资料</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="疯狂java">
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
 <meta name="description"
-	content="代码库-代码分享网，致力于为程序员提供最有帮助的代码">
+	content="疯狂java-为程序员提供最有帮助的文档资料">
 <Link rel="shortcut icon" href="res/images/logo.ico">
 <link rel="stylesheet" href="res/layui/css/layui.css">
 <link rel="stylesheet" href="res/css/global.css">

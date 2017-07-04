@@ -308,7 +308,7 @@ public class User extends ActionSupport {
 	public String login() {
 		// 由于js+ajax判断用户登录情况，可以肯定用户登录成功。
 		// 登录成功后，根据email获取该账户的所有信息，放到session中
-		com.admintwo.model.User user = userService.getUserByEmail(email);
+		cn.crazyjava.model.User user = userService.getUserByEmail(email);
 		System.out.println("====user/login加密密码：" + ToolsUtils.MD5(pass));
 		// 获取用户之前浏览记录
 		if (user.getPassword().equals(ToolsUtils.MD5(pass))) {

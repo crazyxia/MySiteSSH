@@ -24,7 +24,7 @@
         <a href="resource_add" class="layui-btn jie-add">分享</a>
       </div>
       
-      <!-- 弹幕功能开始 -->
+<%--       <!-- 弹幕功能开始 -->
       <ul class="fly-list fly-list-top">
       	<li class="fly-list-li" style="height:50px;">
       	  <%if(((User) session.getAttribute("user"))==null){ %>
@@ -38,7 +38,7 @@
 	    </li>
       </ul>
       <!-- 弹幕功能结束 -->
-      
+       --%>
       <ul id="ihrs1" class="fly-list fly-list-top"></ul>
       <ul id="ihrs" class="fly-list fly-list"></ul>
       <!-- <ul class="fly-list fly-list-top">

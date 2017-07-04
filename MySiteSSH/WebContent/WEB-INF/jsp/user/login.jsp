@@ -21,13 +21,13 @@
 					<div class="layui-tab-item layui-show">
 						<div class="layui-form layui-form-pane">
 							<form method="post" action="user/login">
-								<div class="layui-form-item">
+								<!-- <div class="layui-form-item">
 									<label for="L_email" class="layui-form-label">邮箱</label>
 									<div class="layui-input-inline">
 										<input type="text" id="L_email" name="email" required
 											lay-verify="email" autocomplete="off" class="layui-input">
 									</div>
-								</div>
+								</div> -->
 								<div class="layui-form-item">
 									<label for="L_pass" class="layui-form-label">密码</label>
 									<div class="layui-input-inline">
