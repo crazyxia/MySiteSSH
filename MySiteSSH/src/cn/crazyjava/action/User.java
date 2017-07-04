@@ -25,18 +25,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-/*import com.admintwo.model.Resources;
-import com.admintwo.model.UserPay;
-import com.admintwo.model.pojo.MyLabel;
-import com.admintwo.model.pojo.ResourcesTop;
-import com.admintwo.model.pojo.UserTop;
-import com.admintwo.service.CommentsService;
-import com.admintwo.service.MessagesService;
-import com.admintwo.service.ResourcesService;
-import com.admintwo.service.UserService;
-import com.admintwo.util.EmailUtils;
-import com.admintwo.util.GsonUtils;
-import com.admintwo.util.ToolsUtils;*/
+/*import cn.crazyjava.model.Resources;
+import cn.crazyjava.model.UserPay;
+import cn.crazyjava.model.pojo.MyLabel;
+import cn.crazyjava.model.pojo.ResourcesTop;
+import cn.crazyjava.model.pojo.UserTop;
+import cn.crazyjava.service.CommentsService;
+import cn.crazyjava.service.MessagesService;
+import cn.crazyjava.service.ResourcesService;
+import cn.crazyjava.service.UserService;
+import cn.crazyjava.util.EmailUtils;
+import cn.crazyjava.util.GsonUtils;
+import cn.crazyjava.util.ToolsUtils;*/
 import com.opensymphony.xwork2.ActionSupport;
 
 import cn.crazyjava.util.ToolsUtils;
@@ -89,7 +89,7 @@ public class User extends ActionSupport {
 
 	private static String createRandom() {
 
-		String str = "2323456789qwertyuipasdfghjkzpzxcvbnm";
+		String str = "0123456789qwertyuipasdfghjkzpzxcvbnm";
 		char[] rands = new char[4];
 
 		for (int i = 0; i < 4; i++) {
@@ -349,7 +349,7 @@ public class User extends ActionSupport {
 	 */
 	public void updateStyle() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		boolean flag = userService.updateStyle(user.getEmail());
 		System.out.println("====user/updateStyle风格修改，true成功，false失败：" + flag + ",email:" + user.getEmail());
 		if (flag) {
@@ -389,7 +389,7 @@ public class User extends ActionSupport {
 	 */
 	public void home() throws Exception {
 		System.out.println("====user/home用户id：" + id);
-		com.admintwo.model.pojo.UserLabels userLabels = userService.getUserLabelsById(id);
+		cn.crazyjava.model.pojo.UserLabels userLabels = userService.getUserLabelsById(id);
 		System.out.println("====user/home返回值：" + userLabels);
 		returnJson(userLabels);
 	}
@@ -439,7 +439,7 @@ public class User extends ActionSupport {
 	 */
 	public void updateSet() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		user.setEmail(email);
 		user.setName(name);
 		user.setSex(sex);
@@ -485,7 +485,7 @@ public class User extends ActionSupport {
 		String realPath = resource.getString("userImg");
 
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		// 页面返回信息
 		String info = "";
 		String[] str = { ".jpg", ".jpeg", ".bmp", ".gif", ".png" };
@@ -542,7 +542,7 @@ public class User extends ActionSupport {
 	 */
 	public void updateImg() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		user.setEmail(email);
 		user.setImg(img);
 		boolean flag = userService.updateUserImgByEmail(user);
@@ -562,8 +562,8 @@ public class User extends ActionSupport {
 	 */
 	public void checkPassword() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = userService
-				.getUserByEmail(((com.admintwo.model.User) request.getSession().getAttribute("user")).getEmail());
+		cn.crazyjava.model.User user = userService
+				.getUserByEmail(((cn.crazyjava.model.User) request.getSession().getAttribute("user")).getEmail());
 		boolean flag = false;
 		System.out.println("====user/checkPassword：判断用户密码是否正确--");
 		System.out.println("====用户界面输入密码（加密后）：" + ToolsUtils.MD5(password));
@@ -581,8 +581,8 @@ public class User extends ActionSupport {
 	 */
 	public void updatePassword() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = new com.admintwo.model.User();
-		user.setEmail(((com.admintwo.model.User) request.getSession().getAttribute("user")).getEmail());
+		cn.crazyjava.model.User user = new cn.crazyjava.model.User();
+		user.setEmail(((cn.crazyjava.model.User) request.getSession().getAttribute("user")).getEmail());
 		user.setPassword((ToolsUtils.MD5(password)));
 		boolean flag = userService.updateUserPasswordByEmail(user);
 		System.out.println("====user/updatePassword修改密码：true为修改成功，false为修改失败：" + flag);
@@ -597,7 +597,7 @@ public class User extends ActionSupport {
 	public void rePassword() throws Exception {
 		System.out.println("====user/rePassword用户邮箱：" + email);
 		System.out.println("====user/rePassword用户密码：" + password);
-		com.admintwo.model.User user = new com.admintwo.model.User();
+		cn.crazyjava.model.User user = new cn.crazyjava.model.User();
 		user.setEmail(email);
 		user.setPassword((ToolsUtils.MD5(password)));
 		boolean flag = userService.updateUserPasswordByEmail(user);
@@ -633,8 +633,8 @@ public class User extends ActionSupport {
 	 */
 	public void checkMoney() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = userService
-				.getUserByEmail(((com.admintwo.model.User) request.getSession().getAttribute("user")).getEmail());
+		cn.crazyjava.model.User user = userService
+				.getUserByEmail(((cn.crazyjava.model.User) request.getSession().getAttribute("user")).getEmail());
 		boolean flag = false;
 		if (money <= user.getMoney() && money > 0) {
 			flag = true;
@@ -660,7 +660,7 @@ public class User extends ActionSupport {
 	 */
 	public void moneyToJifen() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		System.out.println("====user/moneyToJifen兑换金额：" + moneyToJifen);
 		boolean flag = false;
 		if (user.getMoney() >= moneyToJifen) {
@@ -681,7 +681,7 @@ public class User extends ActionSupport {
 	 */
 	public void getUserByEmail() throws Exception {
 		System.out.println("====user/getUserByEmail用户email：" + email);
-		com.admintwo.model.User user = userService.getUserByEmail(email);
+		cn.crazyjava.model.User user = userService.getUserByEmail(email);
 		System.out.println("====user/getUserByEmail返回值：" + user);
 		returnJson(user);
 	}
@@ -740,9 +740,9 @@ public class User extends ActionSupport {
 	public void addcomments() throws Exception {
 		// 获取发表评论当前用户
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 
-		com.admintwo.model.Comments comment = new com.admintwo.model.Comments();
+		cn.crazyjava.model.Comments comment = new cn.crazyjava.model.Comments();
 		comment.setContent(c_content);
 		comment.setResources_id(c_resources_id);
 		if (user == null) {
@@ -791,7 +791,7 @@ public class User extends ActionSupport {
 	public void readMessage() throws Exception {
 		System.out.println("====user/readMessage消息id：" + id);
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		boolean flag = messagesService.updateIsReadByIdAndEmail(id, user.getEmail());
 		System.out.println("====user/readMessage消息：" + true);
 		returnJson(flag);
@@ -804,7 +804,7 @@ public class User extends ActionSupport {
 	 */
 	public void readAllMessage() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		boolean flag = messagesService.updateALlIsReadByEmail(user.getEmail());
 		returnJson(flag);
 	}
@@ -838,7 +838,7 @@ public class User extends ActionSupport {
 	 */
 	public void getlabel() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		MyLabel mylabel = userService.getLabelByUser_id(user.getId());
 		System.out.println("====user/getlabel获取用户称号：" + mylabel);
 		returnJson(mylabel);
@@ -852,7 +852,7 @@ public class User extends ActionSupport {
 	public void updateLabel() throws Exception {
 		System.out.println("====user/updateLabel用户升级称号所需的money：" + money);
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		boolean flag = false;
 		if (user.getMoney() >= money) {
 			flag = userService.updateLabel(user.getId(), money);
@@ -870,7 +870,7 @@ public class User extends ActionSupport {
 	 */
 	public void getNewMessage() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		int rows = userService.getNewMessage(user.getEmail());
 		returnJson(rows);
 	}
@@ -886,7 +886,7 @@ public class User extends ActionSupport {
 		String realPath = resource.getString("userpayImg");
 
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		// 页面返回信息
 		String info = "";
 		String[] str = { ".jpg", ".jpeg", ".bmp", ".gif", ".png" };
@@ -944,7 +944,7 @@ public class User extends ActionSupport {
 		String realPath = resource.getString("userpayImg");
 
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		// 页面返回信息
 		String info = "";
 		String[] str = { ".jpg", ".jpeg", ".bmp", ".gif", ".png" };
@@ -998,7 +998,7 @@ public class User extends ActionSupport {
 	 */
 	public void getUserPay() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		com.admintwo.model.User user = (com.admintwo.model.User) request.getSession().getAttribute("user");
+		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
 		UserPay userPay = userService.getUserPay(user.getId());
 		System.out.println("====user/getUserPay获取用户支付二维码图片地址：" + userPay);
 		returnJson(userPay);

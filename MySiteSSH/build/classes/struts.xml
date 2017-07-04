@@ -41,7 +41,7 @@
 	  -->
 	<!-- 约定*_*为所有的jsp跳转，并不执行任何逻辑 -->
 	<package name="jsp" namespace="/" extends="struts-default">
-		<action name="*_*" class="jsp">
+		<action name="*_*" class="cn.crazyjava.action.Jsp">    
 			<result>/WEB-INF/jsp/{1}/{2}.jsp</result>
 		</action>
 	</package>

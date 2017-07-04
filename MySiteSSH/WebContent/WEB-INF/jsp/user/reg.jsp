@@ -17,7 +17,7 @@
 					<li><a href="user_login">登入</a></li>
 					<li class="layui-this"><a href="user_reg">注册</a></li>
 				</ul>
-				<div class="layui-form layui-tab-content" id="LAY_ucm"
+				<!-- <div class="layui-form layui-tab-content" id="LAY_ucm"
 					style="padding: 20px 0;">
 					<div class="layui-tab-item layui-show">
 						<div class="layui-form layui-form-pane">
@@ -63,7 +63,7 @@
 											class="layui-input">
 									</div>
 									<div class="layui-form-mid">
-										<!--若要点击图片刷新，重新得到一个验证码，要在后面加上个随机数，这样保证每次提交过去的都是不一样的path，防止因为缓存而使图片不刷新-->
+										若要点击图片刷新，重新得到一个验证码，要在后面加上个随机数，这样保证每次提交过去的都是不一样的path，防止因为缓存而使图片不刷新
 										<img src="user/createImage"
 											onclick="this.src='user/createImage?number='+ Math.random()"
 											title="点击图片刷新验证码" /><br>
@@ -74,7 +74,7 @@
 								</div>
 							</form>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -91,11 +91,11 @@
 	<script type="text/javascript" src="res/modules/other/ztree/js/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript" src="res/modules/other/mail/autoMail.1.0.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function(){
+	<%-- $(document).ready(function(){
 		$('#L_email').autoMail({
 			emails:['qq.com','163.com','126.com','sina.com','sohu.com','yahoo.cn','gmail.com','hotmail.com','live.cn']
 		});
 	});
-	</script>	
+	</script> --%>	
 </body>
 </html>

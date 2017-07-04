@@ -41,29 +41,6 @@
        --%>
       <ul id="ihrs1" class="fly-list fly-list-top"></ul>
       <ul id="ihrs" class="fly-list fly-list"></ul>
-      <!-- <ul class="fly-list fly-list-top">
-        <li class="fly-list-li">
-          <a href="user_home?id=1" class="fly-list-avatar" >
-            <img src="res/images/userImg/user1.jpg" title="飞哥">
-          </a>
-          <h2 class="fly-tip">
-            <a href="resource_detail?id=1">代码库公告、原创代码、高质量代码总结</a>
-            <span class="fly-tip-stick">公告</span>
-            <span class="fly-tip-jie">原创</span>
-            <span class="fly-tip-jing">精</span>
-          </h2>
-          <p>
-            <span><a href="user_home?id=6">飞哥</a></span>
-            <span>2017-04-23</span>
-            <span class="fly-list-hint"> 
-              <i class="iconfont" title="评论">&#xe60c;</i> <label id="res_comments_num">0</label>
-              <i class="layui-icon" title="下载" style="font-size: 14px;">&#xe601;</i> <label id="res_download_num">0</label>
-              <i class="layui-icon" title="收藏" style="font-size: 14px;">&#xe600;</i> <label id="res_keep_num">0</label>
-            </span>
-          </p>
-        </li>
-      </ul> -->
-      
       <div style="text-align: center">
         <div class="laypage-main">
           <a href="resource_index" class="laypage-next">更多求解</a>
@@ -77,13 +54,13 @@
     <div class="fly-panel leifeng-rank"> 
       <h3 class="fly-panel-title">本月分享榜</h3>
       <dl id="usertop">
-        <!-- <dd>
+        <dd>
           <a href="#">
             <img src="res/images/avatar/default.png">
             <cite>代码库</cite>
             <i>空缺</i>
           </a>
-        </dd> -->
+        </dd>
       </dl>
     </div>
     
@@ -96,26 +73,26 @@
     
     <dl class="fly-panel fly-list-one" id="commentstop"> 
       <dt class="fly-panel-title">本月评论榜</dt>
-      <!-- <dd>
+      <dd>
         <a href="jie/detail.html">使用 layui 秒搭后台大布局（基本结构）</a>
         <span><i class="iconfont" title="评论">&#xe60c;</i> 6087</span>
-      </dd> -->
+      </dd>
     </dl>
     
     <dl class="fly-panel fly-list-one" id="downloadtop"> 
       <dt class="fly-panel-title">本月下载榜</dt>
-      <!-- <dd>
+      <dd>
         <a href="jie/detail.html">使用 layui 秒搭后台大布局之基本结构</a>
         <span><i class="layui-icon" title="下载" style="font-size: 14px;">&#xe601;</i> 96</span>
-      </dd> -->
+      </dd>
     </dl>
     
     <dl class="fly-panel fly-list-one" id="keeptop"> 
       <dt class="fly-panel-title">本月收藏榜</dt>
-      <!-- <dd>
+      <dd>
         <a href="jie/detail.html">使用 layui 秒搭后台大布局之基本结构</a>
         <span><i class="layui-icon" title="收藏" style="font-size: 14px;">&#xe600;</i> 96</span>
-      </dd> -->
+      </dd>
     </dl>
     
     <div class="fly-panel fly-link"> 

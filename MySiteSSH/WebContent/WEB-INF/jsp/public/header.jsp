@@ -5,10 +5,11 @@
 	<div class="main">
 		<a class="logo" href="public_index" title="CrazyJava">CrazyJava</a>
 		<div class="nav">
-			<a href="public_index"><i class="layui-icon" style="top:5px;">&#xe64e;</i>源码库</a> 
+			<a href="public_index"><i class="layui-icon" style="top:5px;">&#xe609;</i>源码库</a> 
 			<a href="knowledge_index"> <i class="layui-icon" style="top:5px;">&#xe60a;</i>知识库<img src="res/images/hot.gif" style="margin-top:-37px;margin-left:-30px;"></a>
 			<a href="video_index"><i class="layui-icon" style="top:3px;">&#xe634;</i>视频库</a> 
 			<a href="project_index"><i class="layui-icon" style="top:3px;">&#xe630;</i>项目库</a> 
+			<a href="project_index"><i class="layui-icon" style="top:3px;">&#xe613;</i>项目库</a>
 			<!-- <a href="resource_add"><i class="layui-icon" style="top:4px;">&#xe60c;</i>分享</a> 
 			<a href="public_search"> <i class="layui-icon" style="top:5px;">&#xe615;</i>搜索</a>
 			<a href="public_support"> <i class="layui-icon" style="top:2px;font-size: 23px;">&#xe600;</i>赞助</a> -->
