@@ -65,7 +65,7 @@
 									<div class="layui-form-mid">
 										<!-- 若要点击图片刷新，重新得到一个验证码，要在后面加上个随机数，这样保证每次提交过去的都是不一样的path，防止因为缓存而使图片不刷新
 										-->
-										<img src="user/createImage" 
+										<img src="user_createImage" 
 											onclick="this.src='user/createImage?number='+ Math.random()"
 											title="点击图片刷新验证码" /><br>
 									</div>
