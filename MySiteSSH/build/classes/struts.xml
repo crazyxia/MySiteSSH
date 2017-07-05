@@ -68,8 +68,8 @@
 			name="success" type="stream"> <param name="contentType">text/html</param> 
 			</result> </action> -->
 		<!-- 注册用户 -->
-		<action name="register" class="user" method="register">
-			<result name="success" type="redirect">../user_login</result>
+		<action name="register" class="cn.crazyjava.action.User" method="register">
+			<result name="success" type="redirect">../user_login</result><!--？？？？？？？？？ -->
 			<result name="error" type="redirect">../user_reg</result>
 		</action>
 		<!-- 判断邮箱是否激活、是否封号 -->

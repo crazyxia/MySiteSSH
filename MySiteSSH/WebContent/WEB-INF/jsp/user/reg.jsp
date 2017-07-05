@@ -17,7 +17,7 @@
 					<li><a href="user_login">登入</a></li>
 					<li class="layui-this"><a href="user_reg">注册</a></li>
 				</ul>
-				<!-- <div class="layui-form layui-tab-content" id="LAY_ucm"
+				<div class="layui-form layui-tab-content" id="LAY_ucm"
 					style="padding: 20px 0;">
 					<div class="layui-tab-item layui-show">
 						<div class="layui-form layui-form-pane">
@@ -37,7 +37,7 @@
 										<input type="text" id="L_username" name="name" required
 											lay-verify="username" autocomplete="off" class="layui-input">
 									</div>
-									<div class="layui-form-mid layui-word-aux">例如：西安 - 飞哥</div>
+									<div class="layui-form-mid layui-word-aux">例如：安徽 - 阿超</div>
 								</div>
 								<div class="layui-form-item">
 									<label for="L_pass" class="layui-form-label">密码</label>
@@ -63,18 +63,19 @@
 											class="layui-input">
 									</div>
 									<div class="layui-form-mid">
-										若要点击图片刷新，重新得到一个验证码，要在后面加上个随机数，这样保证每次提交过去的都是不一样的path，防止因为缓存而使图片不刷新
-										<img src="user/createImage"
+										<!-- 若要点击图片刷新，重新得到一个验证码，要在后面加上个随机数，这样保证每次提交过去的都是不一样的path，防止因为缓存而使图片不刷新
+										-->
+										<img src="user/createImage" 
 											onclick="this.src='user/createImage?number='+ Math.random()"
 											title="点击图片刷新验证码" /><br>
 									</div>
 								</div>
 								<div class="layui-form-item">
-									<button class="layui-btn" lay-filter="register" lay-submit>立即注册</button>&nbsp;&nbsp;&nbsp;&nbsp;我已仔细阅读并接受<a href="public_xieyi" style="color: #428bca;" target="_blank">代码库注册协议</a>
+									<button class="layui-btn" lay-filter="register" lay-submit>立即注册</button>&nbsp;&nbsp;&nbsp;&nbsp;我已仔细阅读并接受<a href="public_xieyi" style="color: #428bca;" target="_blank">疯狂爪呱注册协议</a>
 								</div>
 							</form>
 						</div>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</div>

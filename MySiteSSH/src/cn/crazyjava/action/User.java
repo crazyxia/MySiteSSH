@@ -106,7 +106,7 @@ public class User extends ActionSupport {
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 
 		// 随机产生 120 个干扰点
-		for (int i = 0; i < 120; i++) {
+		for (int i = 0; i < 150; i++) {
 			int x = (int) (Math.random() * WIDTH);
 			int y = (int) (Math.random() * HEIGHT);
 			int red = (int) (Math.random() * 255);
