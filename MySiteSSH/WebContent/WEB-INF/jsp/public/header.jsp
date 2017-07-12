@@ -5,11 +5,15 @@
 	<div class="main">
 		<a class="logo" href="public_index" title="CrazyJava">CrazyJava</a>
 		<div class="nav">
-			<a href="public_index"><i class="layui-icon" style="top:5px;">&#xe609;</i>源码库</a> 
-			<a href="knowledge_index"> <i class="layui-icon" style="top:5px;">&#xe60a;</i>知识库<img src="res/images/hot.gif" style="margin-top:-37px;margin-left:-30px;"></a>
-			<a href="video_index"><i class="layui-icon" style="top:3px;">&#xe634;</i>视频库</a> 
-			<a href="project_index"><i class="layui-icon" style="top:3px;">&#xe630;</i>项目库</a> 
-			<a href="project_index"><i class="layui-icon" style="top:3px;">&#xe613;</i>项目库</a>
+			<a href="public_index"><i class="layui-icon" style="top: 5px;">&#xe609;</i>首页</a>
+			<a href="knowledge_index"> <i class="layui-icon"
+				style="top: 5px;">&#xe60a;</i>分享<img src="res/images/hot.gif"
+				style="margin-top: -37px; margin-left: -30px;"></a> <a
+				href="video_index"><i class="layui-icon" style="top: 3px;">&#xe634;</i>问答</a>
+			<a href="project_index"><i class="layui-icon" style="top: 3px;">&#xe630;</i>博客</a>
+			<a href="project_index"><i class="layui-icon" style="top: 3px;">&#xe613;</i>占坑</a>
+			<!-- <input  class="layui-input" autocomplete="off" placeholder="搜索内容，回车跳转"
+				type="text" name="keyword" required lay-verify="required" style="top: 3px;"> -->
 			<!-- <a href="resource_add"><i class="layui-icon" style="top:4px;">&#xe60c;</i>分享</a> 
 			<a href="public_search"> <i class="layui-icon" style="top:5px;">&#xe615;</i>搜索</a>
 			<a href="public_support"> <i class="layui-icon" style="top:2px;font-size: 23px;">&#xe600;</i>赞助</a> -->
@@ -28,14 +32,18 @@
 			%>
 			<!-- 登入后的状态 -->
 			<a class="avatar" href="user_home?id=<%=user.getId()%>"> <img
-				src="<%=user.getImg()%>"> <cite><%=user.getName()%></cite><!--  <i>VIP2</i> -->
+				src="<%=user.getImg()%>"> <cite><%=user.getName()%></cite>
+			<!--  <i>VIP2</i> -->
 			</a>
 			<div class="nav">
-				<a href="user_message"><i class="layui-icon" style="top:3px;font-size: 24px;">&#xe612;</i>个人中心&nbsp;<span style="top:-1px;" id="newmessage"></span></a>
+				<a href="user_message"><i class="layui-icon"
+					style="top: 3px; font-size: 24px;">&#xe612;</i>个人中心&nbsp;<span
+					style="top: -1px;" id="newmessage"></span></a>
 				<!-- <a href="user_index"><i class="layui-icon" style="top:2px;font-size: 24px;">&#xe635;</i>代码</a>
 				<a href="user_message"><i class="layui-icon" style="top:5px;">&#xe611;</i>消息<span id="newmessage"></span></a>
 				<a href="user_set"><i class="iconfont icon-shezhi"></i>设置</a> -->
-				<a href="user/logout"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>退出</a>
+				<a href="user/logout"><i class="iconfont icon-tuichu"
+					style="top: 0; font-size: 22px;"></i>退出</a>
 			</div>
 			<%
 				}

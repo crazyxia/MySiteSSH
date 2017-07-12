@@ -51,7 +51,7 @@
 	<!-- 用户处理的action -->
 	<package name="user" namespace="/user" extends="struts-default">
 		<!-- 生成验证码 -->
-		<action name="createImageAction" class="user" method="createImage">
+		<action name="createImageAction" class="cn.crazyjava.action.User" method="createImage">
 			<result name="success" type="stream">
 				<param name="contentType">image/jpeg</param>
 				<param name="inputName">inputStream</param>

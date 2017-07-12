@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="zanzhu.jsp"%>
 <div class="footer">
   <p>Copyright © 2017 CrazyJava<a href="http://www.miitbeian.gov.cn/" target="_blank">备案/许可证编号为：皖ICP备17009666号</a></p>
 </div>

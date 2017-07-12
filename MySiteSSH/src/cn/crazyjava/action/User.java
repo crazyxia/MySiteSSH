@@ -89,7 +89,7 @@ public class User extends ActionSupport {
 
 	private static String createRandom() {
 
-		String str = "0123456789qwertyuipasdfghjkzpzxcvbnm";
+		String str = "2323456789qwertyuipasdfghjkzpzxcvbnm";
 		char[] rands = new char[4];
 
 		for (int i = 0; i < 4; i++) {
@@ -165,12 +165,13 @@ public class User extends ActionSupport {
 
 		return SUCCESS;
 	}
+	}
 
-	/**
+/*	*//**
 	 * 该方法用于ajax获取当前验证码
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void getCheckCode() throws Exception {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 
@@ -179,7 +180,7 @@ public class User extends ActionSupport {
 
 		returnJson(checkCode);
 	}
-
+*/
 /*	@Autowired
 	private UserService userService;
 
@@ -207,7 +208,7 @@ public class User extends ActionSupport {
 */
 	/**
 	 * 该方法用于用户注册
-	 */
+	 *//*
 	public String register() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String name = request.getParameter("name");
@@ -235,11 +236,11 @@ public class User extends ActionSupport {
 		this.password = password;
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax判断邮箱是否激活、是否封号
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void isactive() throws Exception {
 		password = ToolsUtils.MD5(password);
 		System.out.println("密码" + password);
@@ -249,9 +250,9 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法用于邮件激活账户
-	 */
+	 *//*
 	public String activate() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String email = request.getParameter("email");
@@ -262,9 +263,9 @@ public class User extends ActionSupport {
 			return ERROR;
 	}
 
-	/**
+	*//**
 	 * 该方法用于重发邮件激活账户
-	 */
+	 *//*
 	public String reactivate() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String email = request.getParameter("email");
@@ -302,9 +303,9 @@ public class User extends ActionSupport {
 		this.pass = pass;
 	}
 
-	/**
+	*//**
 	 * 该方法用于邮箱账户登录成功后处理操作
-	 */
+	 *//*
 	public String login() {
 		// 由于js+ajax判断用户登录情况，可以肯定用户登录成功。
 		// 登录成功后，根据email获取该账户的所有信息，放到session中
@@ -325,11 +326,11 @@ public class User extends ActionSupport {
 		return ERROR;
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax判断session(user)是否存在。是：true，否：false
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void isUserSession() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		boolean flag;
@@ -342,11 +343,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax修改界面风格。并且重新保存session
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void updateStyle() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -361,11 +362,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法用于用户退出，注销账户
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public String logout() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.getSession().removeAttribute("user");
@@ -382,11 +383,11 @@ public class User extends ActionSupport {
 		this.id = id;
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax根据用户id，获取用户主页信息
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void home() throws Exception {
 		System.out.println("====user/home用户id：" + id);
 		cn.crazyjava.model.pojo.UserLabels userLabels = userService.getUserLabelsById(id);
@@ -394,13 +395,13 @@ public class User extends ActionSupport {
 		returnJson(userLabels);
 	}
 //@Getter@Sette
-	/*使用lombok精简get，set方法*/
+	使用lombok精简get，set方法
 	private String name;
 	private int sex;
 	private String city;
 	private String motto;
 
-	/*public String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -430,13 +431,13 @@ public class User extends ActionSupport {
 
 	public void setMotto(String motto) {
 		this.motto = motto;
-	}*/
+	}
 
-	/**
+	*//**
 	 * 该方法根据邮箱，修改主页信息
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void updateSet() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -474,11 +475,11 @@ public class User extends ActionSupport {
 		this.fileFileName = fileFileName;
 	}
 
-	/**
+	*//**
 	 * 该方法用户上传用户头像图片，修改图片名称，修改数据库url地址
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void uploadImg() throws Exception {
 		// 文件在src下，直接用文件名
 		ResourceBundle resource = ResourceBundle.getBundle("img");
@@ -535,11 +536,11 @@ public class User extends ActionSupport {
 		this.img = img;
 	}
 
-	/**
+	*//**
 	 * 该方法根据邮箱，修改用户头像连接
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void updateImg() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -555,11 +556,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax判断密码是否正确
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void checkPassword() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = userService
@@ -574,11 +575,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法根据邮箱，修改用户密码
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void updatePassword() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = new cn.crazyjava.model.User();
@@ -589,11 +590,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法邮件修改用户密码
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void rePassword() throws Exception {
 		System.out.println("====user/rePassword用户邮箱：" + email);
 		System.out.println("====user/rePassword用户密码：" + password);
@@ -605,11 +606,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法根据邮件重置密码
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void emailUpdatePassword() throws Exception {
 		EmailUtils.sendEmailForpassword(email + "用户", email);
 		System.out.println("====user/emailUpdatePassword发送邮件成功");
@@ -626,11 +627,11 @@ public class User extends ActionSupport {
 		this.money = money;
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax判断余额是否足够
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void checkMoney() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = userService
@@ -653,11 +654,11 @@ public class User extends ActionSupport {
 		this.moneyToJifen = moneyToJifen;
 	}
 
-	/**
+	*//**
 	 * 该方法赞助兑换积分
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void moneyToJifen() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -674,11 +675,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法用于ajax根据用户email，获取用户信息
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void getUserByEmail() throws Exception {
 		System.out.println("====user/getUserByEmail用户email：" + email);
 		cn.crazyjava.model.User user = userService.getUserByEmail(email);
@@ -732,11 +733,11 @@ public class User extends ActionSupport {
 		this.c_lou = c_lou;
 	}
 
-	/**
+	*//**
 	 * 该方法ajax用户发表评论
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void addcomments() throws Exception {
 		// 获取发表评论当前用户
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -783,11 +784,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法删除最新消息
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void readMessage() throws Exception {
 		System.out.println("====user/readMessage消息id：" + id);
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -797,11 +798,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法删除最新消息
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void readAllMessage() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -809,33 +810,33 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 该方法获取用户分享榜
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void top() throws Exception {
 		List<UserTop> uts = userService.getTop();
 		System.out.println("====user/top前12分享：" + uts);
 		returnJson(uts);
 	}
 
-	/**
+	*//**
 	 * 该方法获取资源榜
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void resourcestop() throws Exception {
 		List<ResourcesTop> rts = userService.getResourcesTop();
 		System.out.println("====user/getResourcesTop资源前12分享：" + rts);
 		returnJson(rts);
 	}
 
-	/**
+	*//**
 	 * 该方法获取用户称号
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void getlabel() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -844,11 +845,11 @@ public class User extends ActionSupport {
 		returnJson(mylabel);
 	}
 
-	/**
+	*//**
 	 * 该方法升级用户称号
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void updateLabel() throws Exception {
 		System.out.println("====user/updateLabel用户升级称号所需的money：" + money);
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -863,11 +864,11 @@ public class User extends ActionSupport {
 		returnJson(flag);
 	}
 
-	/**
+	*//**
 	 * 获取用户最新消息
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void getNewMessage() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -875,11 +876,11 @@ public class User extends ActionSupport {
 		returnJson(rows);
 	}
 
-	/**
+	*//**
 	 * 该方法用户上传支付宝图片
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void zhifubao() throws Exception {
 		// 文件在src下，直接用文件名
 		ResourceBundle resource = ResourceBundle.getBundle("img");
@@ -933,11 +934,11 @@ public class User extends ActionSupport {
 		returnJson(info);
 	}
 
-	/**
+	*//**
 	 * 该方法用户上传微信图片
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void weixin() throws Exception {
 		// 文件在src下，直接用文件名
 		ResourceBundle resource = ResourceBundle.getBundle("img");
@@ -991,11 +992,11 @@ public class User extends ActionSupport {
 		returnJson(info);
 	}
 
-	/**
+	*//**
 	 * 获取用户支付二维码
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void getUserPay() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		cn.crazyjava.model.User user = (cn.crazyjava.model.User) request.getSession().getAttribute("user");
@@ -1014,11 +1015,11 @@ public class User extends ActionSupport {
 		this.resources_id = resources_id;
 	}
 
-	/**
+	*//**
 	 * 根据资源id获取用户支付二维码
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
 	public void getUserPayByResources_id() throws Exception {
 		System.out.println("====user/getUserPayByResources_id获取用户二维码所需资源id：" + resources_id);
 		Resources r = resourcesService.getResourceByid(resources_id);
@@ -1028,12 +1029,12 @@ public class User extends ActionSupport {
 		returnJson(userPay);
 	}
 
-	/**
+	*//**
 	 * 该方法用于返回json
 	 * 
 	 * @param obj
 	 * @throws Exception
-	 */
+	 *//*
 	public void returnJson(Object obj) throws Exception {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setContentType("text/html;charset=utf-8");
@@ -1047,3 +1048,4 @@ public class User extends ActionSupport {
 	}
 
 }
+*/

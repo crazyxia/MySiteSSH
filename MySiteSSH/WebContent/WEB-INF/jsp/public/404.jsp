@@ -11,6 +11,7 @@
   <div class="fly-none">
     <h2><i class="iconfont icon-404"></i></h2>
     <p>页面或者数据被运到火星了，啥都看不到了…</p>
+
   </div>
 </div>
 
